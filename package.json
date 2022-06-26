@@ -5,13 +5,20 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint:es": "eslint '**/*.{js,ts,tsx}'",
+    "lint:es:fix": "npm run lint:es -- --fix",
+    "lint:etc": "prettier '**/*.{json,yaml,md}' --check",
+    "lint:etc:fix": "prettier '**/*.{json,yaml,md}' --write",
+    "lint:style": "stylelint './**/*.{js,ts,tsx,css}'",
+    "lint:style:fix": "stylelint './**/*.{js,ts,tsx,css}' --fix"
   },
   "dependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
+    "@titicaca/eslint-config-triple": "^3.1.0",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@vitejs/plugin-react": "^1.3.0",
