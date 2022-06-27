@@ -4,11 +4,15 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: blue;
+  color: ${(props) => props.theme.color.main};
 `
 
 function App() {
-  return <Container>hello</Container>
+  return (
+    <Container>
+      <button>hi</button>
+    </Container>
+  )
 }
 
 export default App
