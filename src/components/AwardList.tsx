@@ -49,7 +49,7 @@ const StyledAward = styled.li<Pick<Props, 'awardImgSrc'>>`
   background-size: 54px 54px;
   background-position: left top;
   background-repeat: no-repeat;
-  color: rgba(58, 58, 58, 0.8);
+  color: ${({ theme }) => theme.colors.greyOpacity800};
   font-weight: bold;
 `
 

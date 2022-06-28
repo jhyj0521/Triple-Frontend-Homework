@@ -37,7 +37,7 @@ const StyledContainer = styled.div`
 const HomePage = () => {
   return (
     <StyledContainer>
-      <Logo logoImgSrc="assets/triple2x.png" description="2019년 2월 기준" />
+      <Logo />
       <Statistic />
       <AwardList />
     </StyledContainer>

@@ -34,7 +34,7 @@ const Li = styled.li`
   font-size: 36px;
   letter-spacing: -1px;
   margin-bottom: 20px;
-  color: rgb(58, 58, 58);
+  color: ${({ theme }) => theme.colors.grey};
 `
 
 const Item = ({ count, unit, target }: Props) => {
