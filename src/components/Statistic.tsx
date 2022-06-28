@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import useCountUp from '../hooks/useCountUp'
 
 const Ul = styled.ul`
-  margin: 0 0 0 623px;
+  margin: 0 0 0 670px;
   padding-top: 150px;
 `
 

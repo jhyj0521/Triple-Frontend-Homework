@@ -2,7 +2,7 @@ import { useState } from 'react'
 import styled from 'styled-components'
 
 const Ul = styled.ul`
-  margin: 50px 0px 140px 623px;
+  margin: 50px 0px 140px 670px;
   white-space: pre-wrap;
   display: flex;
 `
