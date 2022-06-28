@@ -16,7 +16,7 @@ const useCountUp = ({ start = 0, end, duration = 2000 }: Props) => {
 
   const animate = () => {
     if (time <= duration) {
-      setTime(() => time + 1000 / 100)
+      setTime(() => time + 1000 / 80)
       setCount(Math.round(easeInExpo(time / 1000, start, end, duration / 1000)))
     }
   }
