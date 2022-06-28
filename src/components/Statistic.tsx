@@ -37,7 +37,7 @@ const StyledItem = styled.li`
 `
 
 const Item = ({ count, unit, target }: ItemProps) => {
-  const { count: num } = useCountUp({ end: count })
+  const [num] = useCountUp({ end: count })
 
   return (
     <StyledItem>
