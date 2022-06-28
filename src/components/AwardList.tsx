@@ -27,11 +27,11 @@ const StyledAwardList = styled.ul<AwardList>`
   transform: translateY(
     ${({ showComponent }) => (showComponent ? '0' : '10px')}
   );
-  transition: all 0.7s ease-in-out 0.2s;
+  transition: all 0.7s ease-in-out;
 `
 
 const AwardList = () => {
-  const [showComponent] = useFadeIn()
+  const [showComponent] = useFadeIn(200)
 
   return (
     <StyledAwardList showComponent={showComponent}>

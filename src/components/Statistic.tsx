@@ -20,11 +20,11 @@ const StyledStatistic = styled.ul<Statistic>`
   transform: translateY(
     ${({ showComponent }) => (showComponent ? '0' : '10px')}
   );
-  transition: all 0.7s ease-in-out 0.1s;
+  transition: all 0.7s ease-in-out;
 `
 
 const Statistic = () => {
-  const [showComponent] = useFadeIn()
+  const [showComponent] = useFadeIn(100)
 
   return (
     <StyledStatistic showComponent={showComponent}>

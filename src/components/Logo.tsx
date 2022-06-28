@@ -27,7 +27,7 @@ const StyledLogo = styled.div<Logo>`
 `
 
 const Logo = () => {
-  const [showComponent] = useFadeIn()
+  const [showComponent] = useFadeIn(0)
   return (
     <StyledLogo logoSrc="assets/triple2x.png" showComponent={showComponent}>
       2019년 2월 기준

@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
 
-const useFadeIn = () => {
+const useFadeIn = (delay: number) => {
   const [showComponent, setShowComponent] = useState(false)
 
   useEffect(() => {
-    setShowComponent(true)
+    setTimeout(() => {
+      setShowComponent(true)
+    }, delay)
   }, [])
 
   return [showComponent]
