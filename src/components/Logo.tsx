@@ -1,7 +1,10 @@
 import styled from 'styled-components'
 
+import useFadeIn from '../hooks/useFadeIn'
+
 interface Logo {
   logoSrc: string
+  showComponent: boolean
 }
 
 const StyledLogo = styled.div<Logo>`
@@ -16,10 +19,20 @@ const StyledLogo = styled.div<Logo>`
   text-align: center;
   font-size: 15px;
   color: ${({ theme }) => theme.colors.greyOpacity700};
+  opacity: ${({ showComponent }) => (showComponent ? '1' : '0')};
+  transform: translateY(
+    ${({ showComponent }) => (showComponent ? '0' : '10px')}
+  );
+  transition: all 0.7s ease-in-out;
 `
 
 const Logo = () => {
-  return <StyledLogo logoSrc="assets/triple2x.png">2019년 2월 기준</StyledLogo>
+  const [showComponent] = useFadeIn()
+  return (
+    <StyledLogo logoSrc="assets/triple2x.png" showComponent={showComponent}>
+      2019년 2월 기준
+    </StyledLogo>
+  )
 }
 
 export default Logo

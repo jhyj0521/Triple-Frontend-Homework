@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import useFadeIn from '../hooks/useFadeIn'
+
 const awards = [
   {
     id: 0,
@@ -13,15 +15,26 @@ const awards = [
   },
 ]
 
-const StyledAwardList = styled.ul`
+interface AwardList {
+  showComponent: boolean
+}
+
+const StyledAwardList = styled.ul<AwardList>`
   margin: 50px 0px 140px 670px;
   white-space: pre-wrap;
   display: flex;
+  opacity: ${({ showComponent }) => (showComponent ? '1' : '0')};
+  transform: translateY(
+    ${({ showComponent }) => (showComponent ? '0' : '10px')}
+  );
+  transition: all 0.7s ease-in-out 0.2s;
 `
 
 const AwardList = () => {
+  const [showComponent] = useFadeIn()
+
   return (
-    <StyledAwardList>
+    <StyledAwardList showComponent={showComponent}>
       {awards.map(({ id, awardImgSrc, description }) => (
         <AwardList.Item
           key={id}

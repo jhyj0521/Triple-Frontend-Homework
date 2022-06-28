@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 
 import { easeInExpo } from '../utils/timing'
 
@@ -12,6 +12,8 @@ const useCountUp = ({ start = 0, end, duration = 2000 }: Count) => {
   const [count, setCount] = useState(start)
   const [progressTime, setProgressTime] = useState(0)
 
+  const requestRef = useRef(0)
+
   const animate = () => {
     if (progressTime <= duration) {
       setProgressTime(Math.min(duration, progressTime + 1000 / 60))
@@ -24,7 +26,9 @@ const useCountUp = ({ start = 0, end, duration = 2000 }: Count) => {
   }
 
   useEffect(() => {
-    requestAnimationFrame(animate)
+    requestRef.current = requestAnimationFrame(animate)
+
+    return () => cancelAnimationFrame(requestRef.current)
   })
 
   return [count]

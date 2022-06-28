@@ -1,37 +1,13 @@
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 
 import AwardList from '../components/AwardList'
+import HiddenBox from '../components/HiddenBox'
 import Logo from '../components/Logo'
 import Statistic from '../components/Statistic'
-
-const fadeIn = keyframes`
-  from {
-    transform: translateY(10px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-`
 
 const StyledContainer = styled.div`
   width: 1200px;
   margin: 0 auto;
-
-  > {
-    :nth-child(1) {
-      animation: ${fadeIn} ease-in 0.7s;
-    }
-
-    :nth-child(2) {
-      animation: ${fadeIn} ease-in 0.7s 0.1s;
-    }
-
-    :nth-child(3) {
-      animation: ${fadeIn} ease-in 0.7s 0.2s;
-    }
-  }
 `
 
 const HomePage = () => {
@@ -40,6 +16,7 @@ const HomePage = () => {
       <Logo />
       <Statistic />
       <AwardList />
+      <HiddenBox />
     </StyledContainer>
   )
 }
